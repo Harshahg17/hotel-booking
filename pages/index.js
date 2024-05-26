@@ -10,10 +10,7 @@ import Image from "next/image";
 const Home = () => {
   return (
     <div>
-      <Head>
-        <title>Oyo Hotel Booking</title>
-        <link rel="icon" href="/icon.png" />
-      </Head>
+      
       <Header1 />
       <Header2 />
       <Header3 />
