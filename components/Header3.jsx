@@ -13,7 +13,7 @@ const Header3 = () => {
         <input type="text" placeholder="search...."  className="h-12 mt-5 outline-none px-3 text-lg border-r-2 border-gray-400 col-span-1"/>
         <input type="text" placeholder="search...."  className="h-12 mt-5 outline-none px-3 text-lg col-span-1"/>
         <button type="submit" className="h-12 text-xl px-2 my-2 col-span-1 bg-green-400 hover:cursor-pointer hover:bg-green-600 text-white mt-5">
-        <Link href={"/hotels"}> search </Link> </button>
+        <Link href={`/hotels?city=mumbai`}> search </Link> </button>
       </div>  
   <div className="flex items-center ml-20   font-bold ">
   <button type="submit" className=" h-10  text-sm px-2 my-2 col-span-1  hover:cursor-pointer  text-white mt-1  ">

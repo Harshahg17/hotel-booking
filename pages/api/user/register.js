@@ -35,7 +35,7 @@ export default async function handler(req, res) {
       expiresIn: "30d",
     });
 
-    return res.status(201).json({ msg: "Registered Successfully !", token,result});
+    return res.status(201).json({ msg: "Registered Successfully !", token});
   } catch (error) {
     console.error("Error in user registration:", error);
     return res.status(500).json({ msg: "Internal Server Error" });
