@@ -14,6 +14,7 @@ const HotelPage = ({ hotels }) => (
 
 export default HotelPage;
 
+
 export async function getServerSideProps(ctx) {
   try {
     const res = await fetch(`http://localhost:3000/api/hotels?city=${ctx.query.city}`);
@@ -25,7 +26,7 @@ export async function getServerSideProps(ctx) {
     console.log(ctx.query);
     return {
       props: {
-        hotels: data.hotels || [], // Ensure hotels is not undefined
+       hotels: data.hotels||data.allhotel,// Ensure hotels is not undefined
       },
     };
   } catch (error) {

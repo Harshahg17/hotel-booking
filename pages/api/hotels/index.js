@@ -3,15 +3,7 @@ import Hotel from "@/models/hotel-model";
 export default async function handler(req,res)
 { 
     connectdb();
-   if(req.method==="POST")
-      {
-          const newhotel= new Hotel(req.body);
-         const result = await newhotel.save();
-          res.status(201).json({msg:"hotel added",result}); 
 
-
-
-       }  
 
     if(req.method==="GET")
       {

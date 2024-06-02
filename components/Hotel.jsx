@@ -84,8 +84,8 @@ const Hotel = ({e}) => {
        
         <span>free wifi , pet care , swimming pool ,Beaches , Resort</span>
     <div className=' flex-end'>
-    <button className=' w-52 h-10 rounded-lg bg-blue-400 text-lg ml-5 mt-5'>price:500</button>
-    <Link href={"/hotels/2"} className='text-lG font-bold text-red-600 ml-10' > See Details</Link>
+    <button className=' w-52 h-10 rounded-lg bg-blue-400 text-lg ml-5 mt-5'>price:{e?.price}</button>
+    <Link href={`/hotels/${e?._id}`} className='text-lG font-bold text-red-600 ml-10' > See Details</Link>
     </div>
 
       </div>  
