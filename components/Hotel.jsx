@@ -8,7 +8,7 @@ const Hotel = ({e}) => {
       <Head>
         <title>hotel</title>
       </Head>
-      <div className=" flex border-2 border-red-500 rounded-lg h-60 w-full mb-5 p-5 mr-5">   
+      <div className=" flex border-2 border-red-500 rounded-lg h-50 w-full mb-5 p-5 mr-5">   
         <Image 
           src="https://media.istockphoto.com/id/119926339/photo/resort-swimming-pool.jpg?s=612x612&w=0&k=20&c=9QtwJC2boq3GFHaeDsKytF4-CavYKQuy1jBD2IRfYKc=" 
           alt="hotel" 
@@ -82,9 +82,9 @@ const Hotel = ({e}) => {
                 : ""}
             </ul>
        
-        <span>free wifi , pet care , swimming pool ,Beaches , Resort</span>
+        
     <div className=' flex-end'>
-    <button className=' w-52 h-10 rounded-lg bg-blue-400 text-lg ml-5 mt-5'>price:{e?.price}</button>
+    <button className=' w-52 h-10 rounded-lg bg-blue-400 text-lg ml-5'>price:{e?.price}</button>
     <Link href={`/hotels/${e?._id}`} className='text-lG font-bold text-red-600 ml-10' > See Details</Link>
     </div>
 

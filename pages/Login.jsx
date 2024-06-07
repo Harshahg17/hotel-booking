@@ -27,7 +27,7 @@ const router=useRouter();
   
     if(res?.data)
       { 
-        Cookies.set('user',res.data.token);
+        Cookies.set('user',res.data.token,{expires:7});
         alert(res.data.msg);
         router.push('/');
       }
@@ -64,9 +64,9 @@ const router=useRouter();
   
     if(res?.data)
       { 
-        Cookies.set('user',res.data.token);
+        Cookies.set('user',res.data.token,{expires:7});
         alert(res.data.msg);
-        router.push('/');
+        router.back();
       }
     } catch (error) {
       // Handle and log errors

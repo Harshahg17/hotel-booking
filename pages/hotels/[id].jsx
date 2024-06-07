@@ -1,6 +1,19 @@
+"use-client";
 import Image from "next/image";
+import Cookies from "js-cookie";
+import { useState, useEffect } from "react";
+import Link from "next/link";
 
 const SingleHotel = ({ hotel }) => {
+  const [auth, setAuth] = useState(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setAuth(Cookies.get('user'));
+      
+    }
+  }, []);
+
   return (
     <div>
       <div className="w-full">
@@ -16,7 +29,7 @@ const SingleHotel = ({ hotel }) => {
         <h3 className="text-3xl font-bold text-justify">{hotel?.name || "Hotel Name"}</h3>
         <p className="text-xl text-justify">{hotel?.description || "No description available."}</p>
       </div>
-      <button className="ml-28 w-52 h-10 rounded-lg bg-blue-400 text-lg ml-5 mt-5">
+      <button className="ml-28 w-52 h-10 rounded-lg bg-blue-400 text-lg mt-5">
         Price: {hotel?.price || "N/A"}
       </button>
       <div className="ml-28">
@@ -40,20 +53,29 @@ const SingleHotel = ({ hotel }) => {
             : "No facilities available."}
         </ul>
       </div>
-      <button className="ml-28 w-52 h-10 rounded-lg bg-red-400 text-lg ml-5 mt-5">
-        Book Now
-      </button>
+     <div className="my-10">
+     {auth ? (
+        <button className="ml-28 w-52 h-10 rounded-lg bg-red-400 text-lg mt-5">
+          Book Now
+        </button>
+      ) : (
+        <span className="ml-28  text-2xl">
+          Please <Link href="/Login" className="text-green-600">Login</Link> to get new offers
+        </span>
+      )}
+     </div>
     </div>
   );
 };
 
 export default SingleHotel;
 
+
 export async function getServerSideProps(ctx) {
   console.log('Fetching hotel data for ID:', ctx.query.id);
 
   try {
-    const res = await fetch(`http://localhost:3000/api/hotels/${ctx.query.id}`);
+    const res = await fetch(`${process.env.BASE_URL }/api/hotels/${ctx.query.id}`);
     
     if (!res.ok) {
       throw new Error(`HTTP error! status: ${res.status}`);

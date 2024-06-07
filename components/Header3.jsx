@@ -10,10 +10,9 @@ const Header3 = () => {
         </h2>
       </div>
 
-      <div className="grid grid-cols-5 my-5 mx-20 ">
-        <input type="text" placeholder="search...."  className="h-12 mt-5 outline-none px-3 text-lg border-r-2 border-gray-400 col-span-2 " onChange={(e)=>{setCity(e.target.value)}}/>
-        <input type="text" placeholder="search...."  className="h-12 mt-5 outline-none px-3 text-lg border-r-2 border-gray-400 col-span-1"/>
-        <input type="text" placeholder="search...."  className="h-12 mt-5 outline-none px-3 text-lg col-span-1"/>
+      <div className="grid grid-cols-5 my-5 mx-30 ml-60 w-full ">
+        <input type="text" placeholder="search...."  className="h-12 mt-5 outline-none px-3 text-lg border-r-2 border-gray-400 col-span-2  " onChange={(e)=>{setCity(e.target.value)}}/>
+       
         <button type="submit" className="h-12 text-xl px-2 my-2 col-span-1 bg-green-400 hover:cursor-pointer hover:bg-green-600 text-white mt-5">
         <Link href={`/hotels?city=${city}`}> search </Link> </button>
       </div>  

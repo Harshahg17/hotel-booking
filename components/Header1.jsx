@@ -13,6 +13,7 @@ const Header1 = () => {
     const key = Cookies.get("user");
     if (key) {
       setAuth(true);
+    
     } else {
       setAuth(false);
     }
