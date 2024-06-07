@@ -17,6 +17,19 @@ const HotelPage = ({ hotels }) => {
       console.log("clicked")
     }
   };
+
+  const handleCheckList = async () => {
+    const { data } = await axios.get(`/api/facilities/search?val=${checkedList}`);
+    if (data?.hotels) {
+      setList(data.hotels);
+    }
+  };
+
+  useEffect(()=>{
+    if(checkedList){
+      handleCheckList();
+    }
+  },[checkedList])
   
 
   return (
@@ -32,12 +45,11 @@ const HotelPage = ({ hotels }) => {
             checkedList={checkedList}
             setCheckedList={setCheckedList} />
         </div>
-        <div className="col-span-12 md:col-span-9">
+        <div className="md:col-span-9 ">
         {list.length > 0
             ? list.map((e) => {
-              console.log("harsha")
                 return (
-                  <div className=" m-5 " key={e._id}>
+                  <div className="mt-5" key={e._id}>
                     <Hotel e={e} />
                   </div>
                 );
@@ -45,7 +57,7 @@ const HotelPage = ({ hotels }) => {
             : hotels
             ? hotels.map((e) => {
                 return (
-                  <div className=" m-5 " key={e._id}>
+                  <div className=" mt-5  " key={e._id}>
                     <Hotel e={e} />
                   </div>
                 );

@@ -11,6 +11,7 @@ const Filter = ({
   setCheckedList,
 }) => {
   const [list, setList] = useState([]);
+  
 
   const fetchFacilities = async () => {
     try {
