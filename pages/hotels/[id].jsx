@@ -55,9 +55,10 @@ const SingleHotel = ({ hotel }) => {
       </div>
      <div className="my-10">
      {auth ? (
+       <Link href={`/payment/${hotel?._id}`}>
         <button className="ml-28 w-52 h-10 rounded-lg bg-red-400 text-lg mt-5">
           Book Now
-        </button>
+        </button></Link>
       ) : (
         <span className="ml-28  text-2xl">
           Please <Link href="/Login" className="text-green-600">Login</Link> to get new offers
